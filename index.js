@@ -1,5 +1,8 @@
+var autoprefixer = require('autoprefixer-core');
+
 module.exports = function (file, options, cb) {
   var source = file.buffer.toString();
-  if (source.indexOf(options.errorText) > -1) return cb(new Error('No good!'));
-  cb(null, {buffer: new Buffer('bar\n')});
+  try { source = autoprefixer.process(source, options).css; }
+  catch (er) { return cb(er); }
+  cb(null, {buffer: new Buffer(source)});
 };
