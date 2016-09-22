@@ -1,4 +1,4 @@
-var autoprefixer = require('autoprefixer-core');
+var autoprefixer = require('autoprefixer');
 
 module.exports = function (file, options, cb) {
   var source = file.buffer.toString();
