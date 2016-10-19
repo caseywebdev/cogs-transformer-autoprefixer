@@ -1,11 +1,11 @@
 const autoprefixer = require('autoprefixer');
 
-module.exports = (file, options, cb) => {
-  let source = file.buffer.toString();
+module.exports = ({file: {buffer}, options}) => {
   try {
-    source = autoprefixer.process(source, options).css;
+    return {
+      buffer: Buffer.from(autoprefixer.process(buffer.toString(), options).css)
+    };
   } catch (er) {
-    cb(er instanceof Error ? er : new Error(er.toString()));
+    throw er instanceof Error ? er : new Error(er.toString());
   }
-  cb(null, {buffer: new Buffer(source)});
 };
