@@ -1,6 +1,6 @@
 {
   "name": "cogs-transformer-autoprefixer",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "author": "Casey Foster <c@sey.me>",
   "description": "An autoprefixer transformer for Cogs.",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "url": "https://github.com/caseywebdev/cogs-transformer-autoprefixer"
   },
   "dependencies": {
-    "autoprefixer": "6"
+    "autoprefixer": "7"
   },
   "devDependencies": {
     "cogs-test-helper": "3"
